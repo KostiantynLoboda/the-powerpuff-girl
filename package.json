@@ -1,21 +1,37 @@
 {
   "name": "the-powerpuff-girls",
   "version": "0.1.0",
+  "license": "ISC",
   "private": true,
   "dependencies": {
+    "@testing-library/dom": "^7.16.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "enzyme": "^3.11.0",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "redux": "^4.0.5",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "prettier": "^2.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx, src --color",
+    "format": "prettier --write 'src/**/*.{scss,css,json}'",
+    "isready": "yarn format && yarn lint && yarn build"
   },
   "eslintConfig": {
     "extends": [
