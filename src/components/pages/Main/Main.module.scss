@@ -11,6 +11,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  flex-direction: row;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -18,7 +19,25 @@
 .col {
   position: relative;
   width: 100%;
-/*  -ms-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
   flex: 0 0 100%;
-  max-width: 100%;*/
+  max-width: 100%;
+}
+
+.imageContainer {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.image {
+  width: inherit;
+  max-width: 95%;
+  margin: 15px 0;
+}
+
+.infoContainer {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
 }

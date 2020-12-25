@@ -1,3 +1,1 @@
-import MovieDetails from './Episode'
-
-export default MovieDetails
+export { default } from './Episode'

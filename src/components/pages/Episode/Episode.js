@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { fetchEpisode } from '../../../actions'
 import Loader from '../../Loader'
 
-import styles from './Episode.styles.scss'
+import cn from 'classnames'
+import styles from './Episode.module.scss'
 
 const staticImage =
   'https://static.tvmaze.com/images/no-img/no-img-landscape-text.png'
@@ -13,18 +14,18 @@ const Episode = props => {
   }, [])
 
   return (
-    <div className="">
+    <main className={styles.container}>
       {props.episode ? (
-        <div className="">
-          <div className="">
+        <div className={cn(styles.content, styles.col)}>
+          <div className={styles.imageContainer}>
             <img
               className={styles.image}
-              src={props.episode?.image?.medium || staticImage}
+              src={props.episode?.image?.original || staticImage}
               alt="image"
             />
           </div>
-          <div className={styles.name}>
-            <div className="">{props.episode?.name}</div>
+          <div className={styles.infoContainer}>
+            <div className={styles.title}>{props.episode?.name}</div>
             <div className="">Summary: </div>
             <div
               className=""
@@ -35,7 +36,7 @@ const Episode = props => {
           </div>
         </div>
       ) : null}
-    </div>
+    </main>
   )
 }
 const mapStateToProps = state => {

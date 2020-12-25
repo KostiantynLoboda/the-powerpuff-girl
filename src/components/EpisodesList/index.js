@@ -1,3 +1,1 @@
-import MovieList from './EpisodesList'
-
-export default MovieList
+export { default } from './EpisodesList'

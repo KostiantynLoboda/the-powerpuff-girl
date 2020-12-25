@@ -12,30 +12,28 @@ const EpisodesList = props => {
     props.fetchEpisodes()
   }, [])
   return (
-    <div className="">
-      <div className="">
-        <div className="">Season/Number</div>
-        <div className="">Date</div>
-        <div className="">Name</div>
+      <section className={styles.content}>
+        <div className={styles.col}>Season/Number</div>
+        <div className={styles.col}>Date</div>
+        <div className={styles.col}>Name</div>
         {props?.episodes
-          ? props.episodes.map(episode => {
+            ? props.episodes.map(episode => {
               return (
-                <Link
-                  to={`/episodes/${episode.id}`}
-                  className=""
-                  key={shortid.generate()}
-                >
-                  <div className="">
-                    {episode.season}/{episode.number}
-                  </div>
-                  <div className="">{episode.airdate}</div>
-                  <div className="">{episode.name}</div>
-                </Link>
+                  <Link
+                      to={`/episodes/${episode.id}`}
+                      className={styles.col}
+                      key={shortid.generate()}
+                  >
+                    <div className="">
+                      {episode.season}/{episode.number}
+                    </div>
+                    <div className="">{episode.airdate}</div>
+                    <div className="">{episode.name}</div>
+                  </Link>
               )
             })
-          : null}
-      </div>
-    </div>
+            : null}
+      </section>
   )
 }
 
