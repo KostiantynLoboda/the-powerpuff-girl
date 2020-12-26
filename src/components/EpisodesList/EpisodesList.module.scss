@@ -18,7 +18,55 @@
 .col {
   position: relative;
   width: 100%;
-/*  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;*/
+  align-self: center;
+  margin-left: 5px;
+}
+
+.headerList {
+  background-color: #3C948B;
+  color: #fff;
+  display: flex;
+  font-weight: bold;
+  height: 40px;
+  min-width: 65px;
+  width: 100%;
+  > div:not(last-child) {
+    border-right: 1px solid #fff;
+}
+}
+
+.number {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.date {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.name {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.linkContainer {
+  display: flex;
+  min-height: 40px;
+  min-width: 65px;
+  width: 100%;
+  &:nth-child(odd) {
+    background-color: #ebebeb;
+  }
+}
+
+.link {
+  color: #3C948B;
+  flex-shrink: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
 }

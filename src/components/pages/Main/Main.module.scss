@@ -32,7 +32,6 @@
 
 .image {
   width: inherit;
-  max-width: 95%;
   margin: 15px 0;
 }
 
@@ -40,4 +39,20 @@
   -ms-flex: 0 0 66.666667%;
   flex: 0 0 66.666667%;
   max-width: 66.666667%;
+}
+
+.info {
+  margin-left: 15px;
+}
+
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+
+  .imageContainer, .infoContainer {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }

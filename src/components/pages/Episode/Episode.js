@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { fetchEpisode } from '../../../actions'
-import Loader from '../../Loader'
 
-import cn from 'classnames'
+import Button from '../../Button'
+
 import styles from './Episode.module.scss'
 
 const staticImage =
@@ -16,26 +17,33 @@ const Episode = props => {
   return (
     <main className={styles.container}>
       {props.episode ? (
-        <div className={cn(styles.content, styles.col)}>
-          <div className={styles.imageContainer}>
-            <img
-              className={styles.image}
-              src={props.episode?.image?.original || staticImage}
-              alt="image"
-            />
+        <section className={styles.content}>
+          <div className={styles.col}>
+            <div className={styles.imageContainer}>
+              <img
+                className={styles.image}
+                src={props.episode?.image?.original || staticImage}
+                alt="image"
+              />
+            </div>
+            <div className={styles.infoContainer}>
+              <div className={styles.title}>{props.episode?.name}</div>
+              <div className="">Summary:</div>
+              <div
+                className=""
+                dangerouslySetInnerHTML={{
+                  __html: props.episode?.summary,
+                }}
+              />
+            </div>
           </div>
-          <div className={styles.infoContainer}>
-            <div className={styles.title}>{props.episode?.name}</div>
-            <div className="">Summary: </div>
-            <div
-              className=""
-              dangerouslySetInnerHTML={{
-                __html: props.episode?.summary,
-              }}
-            />
-          </div>
-        </div>
+        </section>
       ) : null}
+      <section className={styles.content}>
+        <Link className={styles.link} to="/">
+          <Button>Go To Main Page</Button>
+        </Link>
+      </section>
     </main>
   )
 }

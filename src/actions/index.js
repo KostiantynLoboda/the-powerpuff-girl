@@ -24,25 +24,35 @@ const fetchMainInfoError = error => {
 }
 
 const fetchMainInfo = async () => {
+  try {
   const response = await fetch(`${urlApi}/shows/${showId}`)
   return await response.json()
+  } catch (error) {
+  }
 }
 
 const fetchEpisodes = () => async dispatch => {
-  const response = await fetch(`${urlApi}/shows/${showId}/episodes`)
-  const data = await response.json()
-  dispatch({
-    type: 'FETCH_EPISODES_SUCCESS',
-    episodes: data,
-  })
+  try {
+    const response = await fetch(`${urlApi}/shows/${showId}/episodes`)
+    const data = await response.json()
+    dispatch({
+      type: 'FETCH_EPISODES_SUCCESS',
+      episodes: data,
+    })
+  } catch (error) {
+  }
+
 }
 
 const fetchEpisode = id => async dispatch => {
+  try {
   const response = await fetch(`${urlApi}/episodes/${id}`)
   const data = await response.json()
   dispatch({ type: 'FETCH_EPISODE_SUCCESS',
     episode: data,
   })
+  } catch (error) {
+  }
 }
 
 export { fetchMainInfoRequested, fetchMainInfoLoaded, fetchMainInfoError, fetchMainInfo, fetchEpisode, fetchEpisodes }
