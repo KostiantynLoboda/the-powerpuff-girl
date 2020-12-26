@@ -11,19 +11,22 @@ const reducer = (state = initialState, action = {}) => {
     case 'FETCH_MAININFO_REQUEST':
       return {
         ...state,
-        loading: true
+        loading: true,
+        error: null
       }
     case 'FETCH_MAININFO_SUCCESS':
       return {
         ...state,
         movie: action.movie,
-        loading: false
+        loading: false,
+        error: null
       }
     case 'FETCH_MAININFO_FAILURE':
       return {
         ...state,
-        error: action.payload,
-        loading: false
+        movie: {},
+        loading: false,
+        error: action.payload
       }
     case 'FETCH_EPISODES_SUCCESS':
       return {

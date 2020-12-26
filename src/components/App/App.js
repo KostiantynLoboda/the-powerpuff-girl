@@ -1,13 +1,14 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Main from '../pages/Main'
-import Episode from '../pages/Episode'
+
+import MainPage from '../pages/MainPage/MainPage'
+import EpisodePage from '../pages/EpisodePage/EpisodePage'
 
 const App = () => {
   return (
       <Switch>
-        <Route path="/" component={Main} exact />
-        <Route path="/episodes/:id" component={Episode} />
+        <Route path="/" component={MainPage} exact />
+        <Route path="/episodes/:id" component={EpisodePage} />
       </Switch>
   )
 }

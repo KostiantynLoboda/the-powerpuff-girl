@@ -1,5 +1,3 @@
-import React from 'react'
-
 const urlApi = 'https://api.tvmaze.com'
 const showId = 6771
 

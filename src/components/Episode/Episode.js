@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchEpisode } from '../../../actions'
+import { fetchEpisode } from '../../actions'
 
-import Button from '../../Button'
+import Button from '../Button'
 
 import styles from './Episode.module.scss'
 
@@ -28,9 +28,7 @@ const Episode = props => {
             </div>
             <div className={styles.infoContainer}>
               <div className={styles.title}>{props.episode?.name}</div>
-              <div className="">Summary:</div>
               <div
-                className=""
                 dangerouslySetInnerHTML={{
                   __html: props.episode?.summary,
                 }}
@@ -47,6 +45,7 @@ const Episode = props => {
     </main>
   )
 }
+
 const mapStateToProps = state => {
   return {
     episode: state.episode,
