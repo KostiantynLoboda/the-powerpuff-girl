@@ -36,6 +36,7 @@
 .loadingioSpinner {
     width: 98px;
     height: 98px;
+    display: -ms-flexbox;
     display: flex;
     margin: auto;
     overflow: hidden;

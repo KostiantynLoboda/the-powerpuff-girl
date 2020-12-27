@@ -25,6 +25,7 @@
 .headerList {
   background-color: var(--green100);
   color: var(--white100);
+  display: -ms-flexbox;
   display: flex;
   font-weight: bold;
   height: 40px;
@@ -54,6 +55,7 @@
 }
 
 .linkContainer {
+  display: -ms-flexbox;
   display: flex;
   min-height: 40px;
   min-width: 65px;

@@ -5,7 +5,7 @@ import styles from './Button.module.scss'
 
 const Button = ({children}) => {
   return (
-    <button className={styles.button}>
+    <button className={styles.button} data-id="button">
       {children}
     </button>
   )

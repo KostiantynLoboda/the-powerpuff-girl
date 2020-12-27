@@ -17,6 +17,7 @@
 }
 
 .col {
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   width: 100%;

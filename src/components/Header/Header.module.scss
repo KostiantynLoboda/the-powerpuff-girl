@@ -1,6 +1,7 @@
 .header {
   align-items: center;
   background: var(--green100);
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   min-height: 60px;
