@@ -2,6 +2,7 @@
   "name": "the-powerpuff-girls",
   "version": "0.1.0",
   "license": "ISC",
+  "author": "Kostiantyn Loboda <kloboda@gmail.com> (https://github.com/KostiantynLoboda)",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
