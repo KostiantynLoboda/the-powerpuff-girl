@@ -2,9 +2,9 @@ import React from 'react'
 
 import Episode from '../../Episode'
 
-const EpisodePage = () => {
+const EpisodePage = ({match}) => {
   return (
-    <Episode />
+    <Episode match={match}/>
   )
 }
 

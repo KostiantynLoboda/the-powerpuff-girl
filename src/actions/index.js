@@ -1,19 +1,14 @@
-const urlApi = 'https://api.tvmaze.com'
-const showId = 6771
-
 const fetchMainInfoRequested = () => {
   return {
     type: 'FETCH_MAININFO_REQUEST',
   }
 }
-
 const fetchMainInfoLoaded = data => {
   return {
     type: 'FETCH_MAININFO_SUCCESS',
     movie: data,
   }
 }
-
 const fetchMainInfoError = error => {
   return {
     type: 'FETCH_MAININFO_FAILURE',
@@ -21,36 +16,44 @@ const fetchMainInfoError = error => {
   }
 }
 
-const fetchMainInfo = async () => {
-  try {
-  const response = await fetch(`${urlApi}/shows/${showId}`)
-  return await response.json()
-  } catch (error) {
+const fetchEpisodesRequested = () => {
+  return {
+    type: 'FETCH_EPISODES_REQUEST',
+  }
+}
+const fetchEpisodesLoaded = data => {
+  return {
+    type: 'FETCH_EPISODES_SUCCESS',
+    episodes: data,
+  }
+}
+const fetchEpisodesError = error => {
+  return {
+    type: 'FETCH_EPISODES_FAILURE',
+    payload: error,
   }
 }
 
-const fetchEpisodes = () => async dispatch => {
-  try {
-    const response = await fetch(`${urlApi}/shows/${showId}/episodes`)
-    const data = await response.json()
-    dispatch({
-      type: 'FETCH_EPISODES_SUCCESS',
-      episodes: data,
-    })
-  } catch (error) {
+const fetchEpisodeRequested = () => {
+  return {
+    type: 'FETCH_EPISODE_REQUEST',
   }
-
 }
-
-const fetchEpisode = id => async dispatch => {
-  try {
-  const response = await fetch(`${urlApi}/episodes/${id}`)
-  const data = await response.json()
-  dispatch({ type: 'FETCH_EPISODE_SUCCESS',
+const fetchEpisodeLoaded = data => {
+  return {
+    type: 'FETCH_EPISODE_SUCCESS',
     episode: data,
-  })
-  } catch (error) {
+  }
+}
+const fetchEpisodeError = error => {
+  return {
+    type: 'FETCH_EPISODE_FAILURE',
+    payload: error,
   }
 }
 
-export { fetchMainInfoRequested, fetchMainInfoLoaded, fetchMainInfoError, fetchMainInfo, fetchEpisode, fetchEpisodes }
+export {
+  fetchMainInfoRequested, fetchMainInfoLoaded, fetchMainInfoError,
+  fetchEpisodesRequested, fetchEpisodesLoaded, fetchEpisodesError,
+  fetchEpisodeRequested, fetchEpisodeLoaded, fetchEpisodeError
+}

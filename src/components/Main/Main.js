@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import EpisodesList from '../EpisodesList'
 import ErrorIndicator from '../Error-indicator'
 import Spinner from '../Spinner'
 
@@ -29,7 +28,6 @@ const MainContainer = ({ movie }) => {
           </>
         ) : null}
       </main>
-      <EpisodesList/>
     </>
   )
 }
