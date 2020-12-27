@@ -17,7 +17,7 @@ const MainContainer = ({ movie }) => {
             <section className={styles.content}>
               <div className={cn(styles.col, styles.imageContainer)}>
                 <img className={styles.image}
-                     src={movie.image?.original} alt="image"/>
+                     src={movie.image?.original} alt="Main"/>
               </div>
               <div className={cn(styles.col, styles.infoContainer)}>
                 <div className={styles.info} dangerouslySetInnerHTML={{
