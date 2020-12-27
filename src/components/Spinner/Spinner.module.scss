@@ -25,11 +25,11 @@
 }
 
 .ldio div:nth-child(1) {
-    border-color: #93dbe9
+    border-color: var(--blue50);
 }
 
 .ldio div:nth-child(2) {
-    border-color: #689cc5;
+    border-color: var(--blue100);
     animation-delay: -0.7692307692307692s;
 }
 

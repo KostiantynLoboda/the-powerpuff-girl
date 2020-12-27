@@ -23,15 +23,15 @@
 }
 
 .headerList {
-  background-color: #3C948B;
-  color: #fff;
+  background-color: var(--green100);
+  color: var(--white100);
   display: flex;
   font-weight: bold;
   height: 40px;
   min-width: 65px;
   width: 100%;
   > div:not(last-child) {
-    border-right: 1px solid #fff;
+    border-right: 1px solid var(--white100);
 }
 }
 
@@ -59,12 +59,12 @@
   min-width: 65px;
   width: 100%;
   &:nth-child(odd) {
-    background-color: #ebebeb;
+    background-color: var(--white50);
   }
 }
 
 .link {
-  color: #3C948B;
+  color: var(--green100);
   flex-shrink: inherit;
   &:hover {
     text-decoration: underline;

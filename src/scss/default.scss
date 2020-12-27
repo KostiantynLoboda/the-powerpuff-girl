@@ -1,5 +1,18 @@
 @import '../../node_modules/normalize.css/normalize.css';
 
+:root {
+	--black100: #000000;
+	--black50: #0a0a0a;
+	--grey100: #3f3f3f;
+	--grey50: #959595;
+	--white100: #ffffff;
+	--white50: #ebebeb;
+	--green100: #3c948b;
+	--green50: #43ac6a;
+	--blue100: #689cc5;
+	--blue50: #93dbe9;
+}
+
 html {
 	width: 100%;
 	height: 100%;
@@ -10,15 +23,15 @@ body {
 	width: 100%;
 	height: 100%;
 	font-weight: 300;
-	background-color: #fff;
+	background-color: var(--white100);
 	overflow-x: hidden;
 	font-family: "Open Sans", sans-serif;
-	color: #0a0a0a;
+	color: var(--black50);
 }
 
 a {
 	text-decoration: none;
-	color: #959595;
+	color: var(--grey50);
 }
 
 p {

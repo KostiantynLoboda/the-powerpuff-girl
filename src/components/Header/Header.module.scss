@@ -1,6 +1,6 @@
 .header {
   align-items: center;
-  background: #3F3F3F;
+  background: var(--green100);
   display: flex;
   justify-content: center;
   min-height: 60px;
@@ -8,7 +8,7 @@
 }
 
 .title {
-  color: #FFFFFF;
+  color: var(--white100);
   font-size: 2.9333333333rem;
   left: 0;
   margin: auto;
