@@ -24,7 +24,7 @@ const EpisodeContainer = ({episode}) => {
               <img
                 className={styles.image}
                 src={episode.image?.original || staticImage}
-                alt="image"
+                alt="Episode"
               />
             </div>
             <div className={styles.infoContainer}>
