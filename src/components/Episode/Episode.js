@@ -1,36 +1,37 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchEpisode } from '../../services'
+import PropTypes from 'prop-types'
 
 import Button from '../Button'
-
-import styles from './Episode.module.scss'
 import Spinner from '../Spinner'
 import ErrorIndicator from '../Error-indicator'
+
+import styles from './Episode.module.scss'
 
 const staticImage =
   'https://static.tvmaze.com/images/no-img/no-img-landscape-text.png'
 
-const EpisodeContainer = props => {
+const EpisodeContainer = ({episode}) => {
 
   return (
     <main className={styles.container}>
-      {props.episode ? (
+      {episode ? (
         <section className={styles.content}>
           <div className={styles.col}>
             <div className={styles.imageContainer}>
               <img
                 className={styles.image}
-                src={props.episode?.image?.original || staticImage}
+                src={episode.image?.original || staticImage}
                 alt="image"
               />
             </div>
             <div className={styles.infoContainer}>
-              <div className={styles.title}>{props.episode?.name}</div>
+              <div className={styles.title}>{episode?.name}</div>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: props.episode?.summary,
+                  __html: episode.summary,
                 }}
               />
             </div>
@@ -64,6 +65,19 @@ const Episode = ({ loading, error, movie, match, fetchEpisode, episode }) => {
                       fetchEpisode={fetchEpisode}
                       episode={episode}/>
   )
+}
+
+EpisodeContainer.propTypes = {
+  episode: PropTypes.object.isRequired
+}
+
+Episode.propTypes = {
+  episode: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+  fetchEpisode: PropTypes.func.isRequired,
+  movie: PropTypes.object,
+  error: PropTypes.bool,
+  loading: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => {

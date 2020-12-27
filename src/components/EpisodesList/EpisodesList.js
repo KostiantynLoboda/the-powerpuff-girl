@@ -3,13 +3,15 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import shortid from 'shortid'
 import { fetchEpisodes } from '../../services'
+import PropTypes from 'prop-types'
 
-import cn from 'classnames'
-import styles from './EpisodesList.module.scss'
 import Spinner from '../Spinner'
 import ErrorIndicator from '../Error-indicator'
 
-const EpisodesListContainer = props => {
+import cn from 'classnames'
+import styles from './EpisodesList.module.scss'
+
+const EpisodesListContainer = ({episodes}) => {
 
   return (
     <main className={styles.container}>
@@ -19,8 +21,8 @@ const EpisodesListContainer = props => {
           <div className={cn(styles.col, styles.date)}>Date</div>
           <div className={cn(styles.col, styles.name)}>Name</div>
         </div>
-          {props?.episodes
-            ? props.episodes.map(episode => {
+          {episodes
+            ? episodes.map(episode => {
               return (
                 <div
                   className={cn(styles.col, styles.linkContainer)}
@@ -42,7 +44,7 @@ const EpisodesListContainer = props => {
   )
 }
 
-const EpisodesList = ({ loading, error, fetchEpisodes, episodes,  }) => {
+const EpisodesList = ({ loading, error, fetchEpisodes, episodes }) => {
 
   useEffect(() => {
     fetchEpisodes()
@@ -58,6 +60,18 @@ const EpisodesList = ({ loading, error, fetchEpisodes, episodes,  }) => {
     <EpisodesListContainer episodes={episodes}/>
   )
 }
+
+EpisodesListContainer.propTypes = {
+  episodes: PropTypes.array.isRequired
+}
+
+EpisodesList.propTypes = {
+  episodes: PropTypes.array.isRequired,
+  fetchEpisodes: PropTypes.func.isRequired,
+  error: PropTypes.bool,
+  loading: PropTypes.bool.isRequired
+}
+
 
 const mapStateToProps = state => {
   return {

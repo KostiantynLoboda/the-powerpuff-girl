@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import ErrorIndicator from '../Error-indicator'
 import Spinner from '../Spinner'
@@ -42,6 +43,16 @@ const Main = ({ loading, error, movie }) => {
   return <MainContainer movie={movie}/>
 }
 
+Main.propTypes = {
+  movie: PropTypes.object.isRequired,
+  error: PropTypes.bool,
+  loading: PropTypes.bool.isRequired
+}
+
+MainContainer.propTypes = {
+  movie: PropTypes.object.isRequired
+}
+
 const mapStateToProps = state => {
   return {
     movie: state.movie,
@@ -49,4 +60,5 @@ const mapStateToProps = state => {
     error: state.error,
   }
 }
+
 export default connect(mapStateToProps)(Main)
