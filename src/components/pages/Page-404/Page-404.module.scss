@@ -1,0 +1,14 @@
+.error {
+  text-align: center;
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  &::before {
+    background: url(../../img/404/404.svg) no-repeat 50%;
+    max-width: 535px;
+    height: 293px;
+    content: "";
+    display: block;
+    margin: 0 auto 75px;
+  }
+}

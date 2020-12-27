@@ -1,0 +1,23 @@
+.button {
+  background-color: var(--white100);
+  border: 1px solid var(--green100);
+  color: var(--green100);
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  outline: none;
+  padding: 5px;
+  transition: 0.2s all;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  color: var(--green50);
+}

@@ -1,0 +1,12 @@
+@import '../scss/default';
+
+.exampleStyles {
+  display: inline-flex;
+  height: 140px;
+  width: 140px;
+  margin: 2px;
+  border: 1px solid var(--black100);
+  text-shadow: 1px 1px 8px var(--black50);
+  padding: 5px;
+  color: var(--white100);
+}

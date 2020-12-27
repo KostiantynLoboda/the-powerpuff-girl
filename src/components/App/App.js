@@ -1,7 +1,18 @@
 import React from 'react'
-import '../scss/default.scss'
-import styles from './App.module.scss'
+import { Switch, Route } from 'react-router-dom'
 
-const App = () => <div>The Powerpuff Girls App</div>
+import MainPage from '../pages/MainPage/MainPage'
+import EpisodePage from '../pages/EpisodePage/EpisodePage'
+import Page404 from '../pages/Page-404'
+
+const App = () => {
+  return (
+      <Switch>
+        <Route path="/" component={MainPage} exact />
+        <Route path="/episodes/:id" component={EpisodePage} exact/>
+        <Route component={Page404} />
+      </Switch>
+  )
+}
 
 export default App

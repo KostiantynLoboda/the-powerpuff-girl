@@ -2,13 +2,12 @@
   "name": "the-powerpuff-girls",
   "version": "0.1.0",
   "license": "ISC",
+  "author": "Kostiantyn Loboda <kloboda@gmail.com> (https://github.com/KostiantynLoboda)",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^7.16.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "classnames": "^2.2.6",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
@@ -18,13 +17,22 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "shortid": "^2.2.16"
   },
   "devDependencies": {
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
-    "prettier": "^2.2.1"
+    "@testing-library/dom": "^7.16.2",
+    "@testing-library/jest-dom": "^5.8.0",
+    "@testing-library/react": "^10.3.0",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@testing-library/user-event": "^12.0.2",
+    "prettier": "^2.1.2",
+    "react-styleguidist": "^11.0.8",
+    "react-test-renderer": "^17.0.1"
   },
   "scripts": {
+    "styleguidist-start": "npx styleguidist server",
+    "styleguidist-build": "npx styleguidist build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
